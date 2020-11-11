@@ -6,8 +6,9 @@ const cors = require('cors');
 const session = require('express-session');
 
 // Importing the neccessary files
+const config = require('./config/config');
 const router = require('./router');
-const db = require('./db');
+const dbConnection = require('./dbConnection');
 
 // Setting up an app
 const app = express();
@@ -31,7 +32,7 @@ app.get('*', (req, res) => {
 // Setting up the server
 (async () => {
   try {
-    await db;
+    await dbConnection;
     const SERVER_PORT = global.gConfig.server_port;
     app.listen(SERVER_PORT, () => {
       console.log(`🚀 Server is listening on port ${SERVER_PORT}!`) // eslint-disable-line no-console
