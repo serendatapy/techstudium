@@ -6,21 +6,22 @@ const cors = require('cors');
 const session = require('express-session');
 
 // Importing the neccessary files
-const config = require('./config/config');
+const configuration = require('./config/config');
+const config = global.gConfig;
 const router = require('./router');
-const dbConnection = require('./dbConnection');
+const db = require('./models');
 
 // Setting up an app
 const app = express();
 
 // Setting up cors
-app.use(cors(global.gConfig.cors));
+app.use(cors(config.cors));
 
 // Parsing incoming requests with JSON payloads
 app.use(express.json());
 
 // Setting up a session
-app.use(session(global.gConfig.session));
+app.use(session(config.session));
 
 // Making use of the router
 app.use(router);
@@ -32,8 +33,9 @@ app.get('*', (req, res) => {
 // Setting up the server
 (async () => {
   try {
-    await dbConnection;
-    const SERVER_PORT = global.gConfig.server_port;
+    //await db.sequelize.sync({ force: true });
+    await db.sequelize.sync();
+    const SERVER_PORT = config.server_port;
     app.listen(SERVER_PORT, () => {
       console.log(`🚀 Server is listening on port ${SERVER_PORT}!`) // eslint-disable-line no-console
     })

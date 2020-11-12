@@ -6,8 +6,11 @@ const router = require('express').Router();
 // Importing the neccessary files
 const userController = require('./controllers/user')
 
-//router.post('/register', userController.create);
+// TO BE DELETED FOR SECURITY REASONS
 router.get('/getAllRoutes', userController.getAll);
+// TO BE DELETED FOR SECURITY REASONS
+
+router.post('/register', userController.create);
 
 // Export the router
 module.exports = router;

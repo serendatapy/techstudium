@@ -1,18 +1,24 @@
-// Importing the neccessary files
-const db = require('../dbConnection');
+'use strict';
 
-exports.getAll = async () => {
-  const res = await db.query(
-    `SELECT * FROM ${global.gConfig.mysql.tables.user} WHERE 1;`,
-    function (error, results, fields) {
-      if (error) throw error;
-      console.log('The solution is: ', results[0].solution);
+const tablesConfig = global.gConfig.mysql.tables;
+
+module.exports = (sequelize, DataTypes) => sequelize.define(
+  tablesConfig.user,
+  {
+    email: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    password: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    first_name: {
+      type: DataTypes.STRING,
+      allowNull: false
+    },
+    last_name: {
+      type: DataTypes.STRING,
+      allowNull: false
     }
-  );
-
-  console.log(res);
-  return res.rows;
-}
-
-exports.getOne = async () => {};
-exports.postOne = async () => {};
+  });
