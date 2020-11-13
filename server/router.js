@@ -11,6 +11,7 @@ router.get('/getAllRoutes', userController.getAll);
 // TO BE DELETED FOR SECURITY REASONS
 
 router.post('/register', userController.create);
+router.post('/login',userController.login);
 
 // Export the router
 module.exports = router;

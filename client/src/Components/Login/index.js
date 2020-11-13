@@ -1,6 +1,6 @@
 // Import the style for the component
 import './index.css';
-import logo from '../../assets/whitelogo.png'
+import logo from '../../Assets/whitelogo.png'
 
 // Declare the Login component
 function Login() {
@@ -10,23 +10,24 @@ function Login() {
         <img className="logo" src={logo} />
         <form className="form">
           <div className="input-container">
-            
-          <input
-            type="text"
-            placeholder="username"
-          />
+            <input
+              type="text"
+              placeholder="email"
+            />
           </div>
-        <div className="input-container">
-          <input
-            type="text"
-            placeholder="password"
-          />
-        </div>
-        <button>&nbsp;Login&nbsp;</button>
+          <div className="input-container">
+            <input
+              type="text"
+              placeholder="password"
+            />
+          </div>
+          <button className="login-button">Sign in</button>
         </form>
-      <p>Forgot your password?</p>
+        <div className="register" >
+          Don't have an account? Register here!
+        </div>
+      </div>
     </div>
-    </div >
   )
 }
 

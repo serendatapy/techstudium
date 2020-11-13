@@ -1,6 +1,6 @@
 .container-image{
   background-color: black;
-  background-image: url(../../assets/login.jpg);
+  background-image: url(../../Assets/login.jpg);
   background-position: center;
   height: 100vh;
   background-repeat: no-repeat;
@@ -26,6 +26,7 @@
 
 .logo {
   width: 300px;
+  margin-bottom: 30px;
 }
 
 .form {
@@ -58,8 +59,12 @@ button {
   border-radius: 20px;
   height: 3.5vh;
   width: 100%;
-  color:whitesmoke;
   font-size: 1.5vh;
-  background-color: rgb(103, 145, 21);
   border: none;
+  color:whitesmoke;
+}
+
+.login-button {
+  background-color: rgb(103, 145, 21);
+  margin-bottom: 10px;
 }
