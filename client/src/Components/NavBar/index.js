@@ -18,7 +18,7 @@ function NavBar({ isAuthenticated }) {
               <li>
                 <Link to="/profile">Profile</Link>
               </li>
-              <li><Link>Logout</Link></li>
+              <li><Link to="/logout">Logout</Link></li>
             </React.Fragment>
           ) : (
               <React.Fragment>

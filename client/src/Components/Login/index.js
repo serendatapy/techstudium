@@ -43,8 +43,12 @@ function Login(props) {
     }
     else {
       props.setIsAuthenticated(true);
-      props.user = res;
-      auth.login(() => props.history.push('/profile'));
+      auth.login(() => props.history.push({
+        pathname: "/profile",
+        state: {
+          userinfo: res
+        }
+      }));
     }
   }
 

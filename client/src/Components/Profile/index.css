@@ -4,10 +4,17 @@
   align-items: center;
   color: white;
   height: 100vh;
+  border: 1px solid red;
 }
 
-.profile-image {
-  height: 30vh;
-  width: 30vw;
+.profile-greeting {
   border: 1px solid red;
+}
+
+.profile-container h1 {
+  font-size: 100px;
+}
+
+.profile-container p {
+  font-size: 30px;
 }
