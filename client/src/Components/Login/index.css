@@ -8,7 +8,7 @@
 
 .container-image{
   background-color: black;
-  background-image: url(../../Assets/login.jpg);
+  background-image: url(../../assets/login.jpg);
   background-position: center;
   height: 100vh;
   background-repeat: no-repeat;

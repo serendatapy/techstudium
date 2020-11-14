@@ -1,7 +1,7 @@
 // Import the style for the component
 import './index.css';
 // Import the neccessary files
-import logo from '../../Assets/whitelogo.png'
+import logo from '../../assets/whitelogo.png'
 import auth from '../../Utils/auth';
 import authApiService from '../../Services/AuthApiClient';
 // Import the packages
@@ -36,7 +36,6 @@ function Login(props) {
     const user = { email, password };
     // Look for the user in the database
     const res = await authApiService.login(user);
-    console.log(res);
     // If the user is not found, notify the user
     if (res.err) {
       alert(`${res.message}`);

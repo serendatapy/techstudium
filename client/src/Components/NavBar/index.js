@@ -1,6 +1,6 @@
 // Import the style for the component
 import './index.css';
-import logo from '../../Assets/white_logo_transparent_background2.png'
+import logo from '../../assets/white_logo_transparent_background2.png'
 
 // Declare the NavBar component
 function NavBar() {

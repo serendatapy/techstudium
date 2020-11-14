@@ -1,9 +1,7 @@
 // Import the style for the component
 import './App.css';
 // Import the components
-import Login from './Components/Login/index';
 import Navbar from './Components/NavBar/index';
-import Home from './Components/Home/index';
 import Dashboard from './Dashboard';
 import auth from './Utils/auth';
 import React, { useState } from 'react';

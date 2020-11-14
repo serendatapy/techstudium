@@ -1,6 +1,6 @@
 // Import the style for the component
 import './index.css';
-import homeImage from '../../Assets/laptop.jpg'
+import homeImage from '../../assets/laptop.jpg'
 import { Link } from 'react-router-dom';
 
 // Declare the Home component
