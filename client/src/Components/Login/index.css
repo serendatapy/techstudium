@@ -48,18 +48,19 @@
 .input-container {
   margin: 5px;
   border-radius: 20px;
-  height: 3.5vh;
+  height: 4vh;
   width: 20vw;
   background-color: rgba(259, 259, 259, 0.15);
 }
 
 input {
   border: none;
-  height: 3.5vh;
+  height: 4vh;
   width: 80%;
   border-radius: 20px;
   background-color: rgba(259, 259, 259, 0);
   color:white;
+  font-size: 16px;
 }
 
 .login-button {
@@ -69,7 +70,11 @@ input {
   border-radius: 20px;
   height: 50px;
   width: 100%;
-  font-size: 30px;
+  font-size: 25px;
   border: none;
   color:whitesmoke;
+}
+
+.register {
+  font-size: 16px;
 }

@@ -6,25 +6,18 @@ import auth from '../../Utils/auth';
 import authApiService from '../../Services/AuthApiClient';
 // Import the packages
 import React, { useState } from 'react';
-import {useHistory} from 'react-router-dom';
 
-// Declare the initial states 
+// Declare the initial state
 const initialUserState = {
   email: '',
   password: ''
 };
-const initialAuthState = auth.isAuthenticated();
-
 
 // Declare the Login component
 function Login(props) {
-  
-  const history = useHistory();
   // Set the state
   const [userState, setUserState] = useState(initialUserState);
-  const [isAuthenticated, setAuthState] = useState(initialAuthState);
-
-
+  
   // Handle the changes made in the form input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -50,8 +43,8 @@ function Login(props) {
       setUserState(initialUserState);
     }
     else {
-      setAuthState(true);
-      auth.login(() => history.push('/profile'));
+      props.setIsAuthenticated(true);
+      auth.login(() => props.history.push('/profile'));
       console.log("The user is authenticated")
     }
   }

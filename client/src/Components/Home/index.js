@@ -1,6 +1,7 @@
 // Import the style for the component
 import './index.css';
 import homeImage from '../../Assets/laptop.jpg'
+import { Link } from 'react-router-dom';
 
 // Declare the Home component
 function Home() {
@@ -19,7 +20,9 @@ function Home() {
         <br />
         Practice whenever you want, wherever you want, so you can face the world prepared and confident.
         </p>
-        <button className="home-login-button">Get started</button>
+        <Link to="/login">
+          <button className="home-login-button">Get started</button>
+        </Link>
       </div>
     </div>
   )
