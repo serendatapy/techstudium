@@ -1,0 +1,11 @@
+.navbar-container {
+  height: 80px;
+  color: white;
+  background-color: rgba(0, 0, 0, 0.561);
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  width: 100%;
+  padding: 10px;
+}

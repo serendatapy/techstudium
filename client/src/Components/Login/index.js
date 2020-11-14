@@ -6,22 +6,29 @@ import auth from '../../Utils/auth';
 import authApiService from '../../Services/AuthApiClient';
 // Import the packages
 import React, { useState } from 'react';
+import {useHistory} from 'react-router-dom';
 
-// Declare the initial state of the user email and password
-const initialState = {
+// Declare the initial states 
+const initialUserState = {
   email: '',
   password: ''
 };
+const initialAuthState = auth.isAuthenticated();
+
 
 // Declare the Login component
-function Login() {
+function Login(props) {
+  
+  const history = useHistory();
   // Set the state
-  const [state, setState] = useState(initialState);
+  const [userState, setUserState] = useState(initialUserState);
+  const [isAuthenticated, setAuthState] = useState(initialAuthState);
+
 
   // Handle the changes made in the form input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
-    setState((prevState) => ({
+    setUserState((prevState) => ({
       ...prevState,
       [name]: value
     }));
@@ -31,17 +38,27 @@ function Login() {
   const handleSubmit = async (e) => {
     e.preventDefault();
     // Get the inputted user information from the state
-    const { email, password } = state;
+    const { email, password } = userState;
     // Save the above information in the user variable
     const user = { email, password };
     // Look for the user in the database
     const res = await authApiService.login(user);
     console.log(res);
+    // If the user is not found, notify the user
+    if (res.err) {
+      alert(`${res.message}`);
+      setUserState(initialUserState);
+    }
+    else {
+      setAuthState(true);
+      auth.login(() => history.push('/profile'));
+      console.log("The user is authenticated")
+    }
   }
 
   // Validate the form
   const validateForm = () => {
-    return !state.email || !state.password;
+    return !userState.email || !userState.password;
   };
 
   return (
@@ -54,7 +71,7 @@ function Login() {
               type="text"
               placeholder="email"
               name="email"
-              value={state.email}
+              value={userState.email}
               onChange={handleChange}
             />
           </div>
@@ -63,7 +80,7 @@ function Login() {
               type="password"
               placeholder="password"
               name="password"
-              value={state.password}
+              value={userState.password}
               onChange={handleChange}
             />
           </div>

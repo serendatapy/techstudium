@@ -3,7 +3,7 @@ import './index.css';
 import logo from '../../Assets/whitelogo.png'
 
 // Declare the Login component
-function Login() {
+function Register() {
   return (
     <div className="container-image">
       <div className="login">
@@ -40,4 +40,4 @@ function Login() {
 }
 
 // Export the Login component
-export default Login;
+export default Register;

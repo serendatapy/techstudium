@@ -1,3 +1,11 @@
+*:focus {
+  outline: none;
+}
+
+:root{
+  --customgreen: #6e9516;
+}
+
 .container-image{
   background-color: black;
   background-image: url(../../Assets/login.jpg);
@@ -51,20 +59,17 @@ input {
   width: 80%;
   border-radius: 20px;
   background-color: rgba(259, 259, 259, 0);
-  color:black;
-}
-
-button {
-  margin-top: 30px;
-  border-radius: 20px;
-  height: 3.5vh;
-  width: 100%;
-  font-size: 1.5vh;
-  border: none;
-  color:whitesmoke;
+  color:white;
 }
 
 .login-button {
-  background-color: rgb(103, 145, 21);
+  background-color: #6e9516;
   margin-bottom: 10px;
+  margin-top: 30px;
+  border-radius: 20px;
+  height: 50px;
+  width: 100%;
+  font-size: 30px;
+  border: none;
+  color:whitesmoke;
 }
