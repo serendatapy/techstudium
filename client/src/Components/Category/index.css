@@ -1,0 +1,18 @@
+.category-thumbnail {
+  margin: 30px;
+  height: 30vh;
+  width: 15vw;
+  font-size: 3vh;
+  display: flex;
+  align-items: center;
+  padding: 20px;
+  box-shadow: 0px 10px 30px 0px rgba(0,0,0,0.75);
+  background-color: rgba(128, 128, 128, 0);
+  color: white;
+  transition: transform ease 300ms;
+}
+
+.category-thumbnail:hover {
+  transform: scale(1.1);
+  border: 5px solid var(--customgreen);
+}

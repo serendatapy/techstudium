@@ -1,4 +1,5 @@
 // Import the style for the component
+import CategoryList from '../CategoryList/index';
 import './index.css';
 
 // Declare the Profile component
@@ -12,7 +13,7 @@ function Profile(props) {
         <p>Which subject would you like to test today?</p>
       </div>
       <div className="category-list">
-
+        <CategoryList />
       </div>
     </div>
   )

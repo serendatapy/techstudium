@@ -2,13 +2,13 @@
   display: flex;
   justify-content: center;
   align-items: center;
+  flex-direction: column;
   color: white;
   height: 100vh;
-  border: 1px solid red;
 }
 
 .profile-greeting {
-  border: 1px solid red;
+  margin-bottom: 100px;
 }
 
 .profile-container h1 {
@@ -17,4 +17,8 @@
 
 .profile-container p {
   font-size: 30px;
+}
+
+.profile-container .category-list {
+  height: 30vh;
 }
