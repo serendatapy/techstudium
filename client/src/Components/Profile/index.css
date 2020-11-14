@@ -1,0 +1,13 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  color: white;
+  height: 100vh;
+}
+
+.profile-image {
+  height: 30vh;
+  width: 30vw;
+  border: 1px solid red;
+}

@@ -4,8 +4,11 @@ import './index.css';
 // Declare the Profile component
 function Profile() {
   return (
-    <div>
-    This is the profile page
+    <div className="profile-container">
+      <div className="profile-image">
+        <ion-icon className="profile-icon" name="person-circle-outline"></ion-icon>
+
+      </div>
     </div>
   )
 }

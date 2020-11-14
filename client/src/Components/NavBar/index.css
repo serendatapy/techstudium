@@ -7,5 +7,38 @@
   align-items: center;
   position: fixed;
   width: 100%;
+}
+
+.navbar-logo {
   padding: 10px;
+}
+
+ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+li {
+  display: inline-block;  
+  max-height: 80px;
+  padding: 0 20px;
+  min-width: 150px;  
+  transition: background-color 0.3s ease-in-out;
+  
+}
+
+li a {
+  height: 80px;
+  color: #fafafa;
+  text-align: center;
+  font-size: 1.2rem;
+  text-decoration: none;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+li:hover {
+  background-color: var(--customgreen);
 }

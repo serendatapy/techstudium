@@ -24,12 +24,12 @@ const Dashboard = ({ setIsAuthenticated }) => {
           )}
         />
         <Route path="/profile" component={Profile} />
-{/*         <Route
+        <Route
           path="/logout"
           render={(props) => (
             <Logout {...props} setIsAuthenticated={setIsAuthenticated} />
           )}
-        /> */}
+        />
         <Route path="/" component={Home} />
       </Switch>
     </div>

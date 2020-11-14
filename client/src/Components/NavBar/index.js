@@ -1,14 +1,38 @@
 // Import the style for the component
 import './index.css';
 import logo from '../../assets/white_logo_transparent_background2.png'
+// Import the packages
+import React from 'react';
+import { Link } from 'react-router-dom';
+
 
 // Declare the NavBar component
-function NavBar() {
+function NavBar({ isAuthenticated }) {
   return (
     <div className="navbar-container">
-      <img src={logo} height="100%"/>
+      <img className="navbar-logo" src={logo} height="100%" />
       <div className="nav-items">
-        <ion-icon name="person-circle-outline"></ion-icon>
+        <ul>
+          {isAuthenticated ? (
+            <React.Fragment>
+              <li>
+                <Link to="/profile">Profile</Link>
+              </li>
+              <li><Link>Logout</Link></li>
+            </React.Fragment>
+          ) : (
+              <React.Fragment>
+                <li>
+                  <Link to="/register">Register</Link>
+                </li>
+                <li>
+                  <Link to="/login">Login</Link>
+                </li>
+              </React.Fragment>
+            )
+          }
+        </ul>
+
       </div>
     </div>
   )
