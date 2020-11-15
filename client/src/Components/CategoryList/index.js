@@ -3,12 +3,10 @@ import './index.css';
 import Category from '../Category/index';
 
 // Declare the CategoryList component
-function CategoryList() {
+function CategoryList({ categories }) {
   return (
     <div className="category-list">
-      <Category />
-      <Category />
-      <Category />
+      {categories.map(category => <Category key={category.id} category={category} />)}
     </div>
   )
 }

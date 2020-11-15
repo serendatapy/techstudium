@@ -2,10 +2,10 @@
 import './index.css';
 
 // Declare the Category component
-function Category() {
+function Category({category}) {
   return (
     <button className="category-thumbnail">
-      CATEGORY HAHAHtyhtyeh rftghtyntey
+      {category.name}
     </button>
   )
 }
