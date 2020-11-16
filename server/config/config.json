@@ -34,8 +34,7 @@
         "category": "Category",
         "question": "Question",
         "answer": "Answer",
-        "statistic": "Statistic",
-        "answeredQuestion": "AnsweredQuestion"
+        "statistic": "Statistic"
       }
     }
   },

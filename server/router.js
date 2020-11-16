@@ -29,7 +29,7 @@ router.post('/createAnswer', answerController.create);
 // Statistic
 router.post('/createStatistics', statisticController.create);
 router.get('/statistics', statisticController.get);
-router.get('/statistics/:userId', statisticController.getOne);
+router.get('/statistics/:userId', statisticController.getUserStats);
 
 // Export the router
 module.exports = router;

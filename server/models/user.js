@@ -28,9 +28,5 @@ module.exports = (sequelize, DataTypes) => {
     User.hasMany(model.Statistic);
   };
 
-  User.associate = model => {
-    User.hasMany(model.AnsweredQuestion);
-  };
-
   return User;
 }
