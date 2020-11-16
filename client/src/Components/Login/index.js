@@ -17,7 +17,7 @@ const initialUserState = {
 function Login(props) {
   // Set the state
   const [userState, setUserState] = useState(initialUserState);
-  
+
   // Handle the changes made in the form input fields
   const handleChange = (e) => {
     const { name, value } = e.target;
@@ -43,8 +43,12 @@ function Login(props) {
     }
     else {
       props.setIsAuthenticated(true);
-      auth.login(() => props.history.push('/profile'));
-      console.log("The user is authenticated")
+      auth.login(() => props.history.push({
+        pathname: "/profile",
+        state: {
+          userinfo: res
+        }
+      }));
     }
   }
 
@@ -59,6 +63,7 @@ function Login(props) {
         <img className="logo" src={logo} />
         <form className="form" onSubmit={handleSubmit}>
           <div className="input-container">
+            <ion-icon name="person-outline"></ion-icon>
             <input
               type="text"
               placeholder="email"
@@ -68,6 +73,7 @@ function Login(props) {
             />
           </div>
           <div className="input-container">
+            <ion-icon name="lock-closed-outline"></ion-icon>
             <input
               type="password"
               placeholder="password"

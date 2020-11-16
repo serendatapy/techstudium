@@ -8,7 +8,7 @@
 
 .container-image{
   background-color: black;
-  background-image: url(../../assets/login.jpg);
+  background-image: url(../../assets/login.png);
   background-position: center;
   height: 100vh;
   background-repeat: no-repeat;
@@ -54,6 +54,7 @@
 }
 
 input {
+  margin-left: 15px;
   border: none;
   height: 4vh;
   width: 80%;

@@ -20,16 +20,22 @@ const Dashboard = ({ setIsAuthenticated }) => {
         <Route
           path="/login"
           render={(props) => (
-            <Login {...props} setIsAuthenticated={setIsAuthenticated} showNavbar={false}/>
+            <Login
+              {...props}
+              setIsAuthenticated={setIsAuthenticated}/>
           )}
         />
-        <Route path="/profile" component={Profile} />
-{/*         <Route
+        <Route path="/profile" 
+          render={(props) => (
+            <Profile {...props} setIsAuthenticated={setIsAuthenticated} />
+          )}
+        />
+        <Route
           path="/logout"
           render={(props) => (
             <Logout {...props} setIsAuthenticated={setIsAuthenticated} />
           )}
-        /> */}
+        />
         <Route path="/" component={Home} />
       </Switch>
     </div>
