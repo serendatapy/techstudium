@@ -2,25 +2,31 @@
 import './index.css';
 import ApiClient from '../../Services/AuthApiClient';
 import { useState, useEffect } from 'react';
+import Question from '../Question/index';
+import AnswerList from '../AnswerList';
 
 // Declare the Test component
 function Test(props) {
   const category_name = props.match.params.category_name;
-
-  const [questions, setQuestions] = useState([]);
+  const [question, setQuestions] = useState([]);
 
   // Fetch the categories from the API call
   useEffect(() => {
     ApiClient.getCategory(category_name)
-      .then(category => setQuestions(category.Questions));
+      .then(category => setQuestions(category.Questions[0]));
   }, [])
 
   return (
     <div className="test-container">
-      <div className="test-question">
-        The question goes here {category_name}!
+      <div className="test-category">
+        <h1>{category_name}</h1>
       </div>
-      <div></div>
+      <div className="test-question">
+        <Question question={question} />
+      </div>
+      <div className="test-answer-list">
+        <AnswerList answers={question.Answers}/>
+      </div>
     </div>
   )
 }

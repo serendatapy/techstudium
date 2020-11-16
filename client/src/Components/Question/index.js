@@ -2,10 +2,11 @@
 import './index.css';
 
 // Declare the Question component
-function Question() {
+function Question({ question }) {
+  console.log("The question is: ", question);
   return (
-    <div>
-    This is the Question page
+    <div className="questions">
+      {question.title}
     </div>
   )
 }

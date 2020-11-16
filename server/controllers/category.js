@@ -42,7 +42,13 @@ exports.getOne = async (req, res) => {
       include: [
         {
           model: db.Question,
-          attributes: ["id", "title"]
+          attributes: ["id", "title"],
+          include: [
+            {
+              model: db.Answer,
+              attributes: ["id", "text", "isCorrect", "explanation"]
+            }
+          ]
         }
       ]
     })

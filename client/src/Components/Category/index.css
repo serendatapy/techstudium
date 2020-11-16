@@ -17,3 +17,8 @@
   transform: scale(1.13);
   border: 5px solid var(--customgreen);
 }
+
+.category-thumbnail a {
+  color: #FFFFFF;
+  text-decoration: none;
+}
