@@ -11,7 +11,7 @@ function Profile(props) {
   const [categories, setCategories] = useState([]);
 
   const userInfo = props.location.state.userinfo;
-  const name = userInfo.first_name.charAt(0).toUpperCase() + userInfo.first_name.slice(1);
+  const name = userInfo.firstName.charAt(0).toUpperCase() + userInfo.firstName.slice(1);
 
   // Fetch the categories from the API call
   useEffect(() => {

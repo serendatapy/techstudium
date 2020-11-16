@@ -30,8 +30,12 @@
         "operatorAliases": 0
       },
       "tables": {
-        "user": "user",
-        "category": "category"
+        "user": "User",
+        "category": "Category",
+        "question": "Question",
+        "answer": "Answer",
+        "statistic": "Statistic",
+        "answered_question": "Answered_question"
       }
     }
   },

@@ -25,7 +25,8 @@ export default {
       body: JSON.stringify(user)
     })
   },
-  getCategories: () => { return fetchRequest('/categories') }
+  getCategories: () => { return fetchRequest('/categories') },
+  getCategory: (category) => { return fetchRequest('/categories/' + category) }
 }
 
 // Fetch the information from the API based on the base url and the path to certain data
