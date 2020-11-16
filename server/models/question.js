@@ -21,5 +21,9 @@ module.exports = (sequelize, DataTypes) => {
     Question.belongsTo(model.Category);
   };
 
+  Question.associate = model => {
+    Question.hasMany(model.Answer);
+  };
+
   return Question;
 }

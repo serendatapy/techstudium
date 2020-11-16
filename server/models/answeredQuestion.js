@@ -1,18 +1,16 @@
 'use strict';
 
-const { DH_NOT_SUITABLE_GENERATOR } = require("constants");
-
 const tablesConfig = global.gConfig.mysql.tables;
 
 module.exports = (sequelize, DataTypes) => {
-  const Statistic = sequelize.define(
-    tablesConfig.statistic,
+  const AnsweredQuestion = sequelize.define(
+    tablesConfig.answeredQuestion,
     {
-      score: {
-        type: DataTypes.INTEGER,
+      answeredCorrectly: {
+        type: DataTypes.BOOLEAN,
         allowNull: false
       },
-      duration: {
+      QuestionId: {
         type: DataTypes.INTEGER,
         allowNull: false
       },
@@ -22,9 +20,9 @@ module.exports = (sequelize, DataTypes) => {
       }
     });
 
-  Statistic.associate = model => {
-    Statistic.belongsTo(model.User);
+  AnsweredQuestion.associate = model => {
+    AnsweredQuestion.belongsTo(model.User);
   };
 
-  return Statistic;
+  return AnsweredQuestion;
 }

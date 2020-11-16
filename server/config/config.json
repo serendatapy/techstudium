@@ -35,7 +35,7 @@
         "question": "Question",
         "answer": "Answer",
         "statistic": "Statistic",
-        "answered_question": "Answered_question"
+        "answeredQuestion": "AnsweredQuestion"
       }
     }
   },

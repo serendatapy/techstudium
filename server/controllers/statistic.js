@@ -3,42 +3,36 @@
 // Importing the models
 const db = require('../models');
 
-// Getting all the categories from the database
+// Getting all the statistics from the database
 exports.get = async (req, res) => {
   try {
-    // Await to receive all the categories from the database
-    const categories = await db.Category.findAll({
+    // Await to receive all the statistics from the database
+    const statistics = await db.Statistic.findAll({
       include: [
         {
-          model: db.Question,
-          attributes: ["id", "title"],
-          include: [
-            {
-              model: db.Answer,
-              attributes: ["id", "text", "isCorrect", "explanation"]
-            }
-          ]
+          model: db.User,
+          attributes: ["id", "firstName"]
         }
       ]
     });
     // Send a standard response for a successful HTTP request
     res.status(200);
-    // Send all the categories
-    res.send(categories);
+    // Send all the statistics
+    res.send(statistics);
   } catch (err) {
     // Log an error message 
-    console.error(`Failed to retrieve all categories in the controller with error ${err}`);
+    console.error(`Failed to retrieve all statistics in the controller with error ${err}`);
     // Send an Internal Server Error response
     res.sendStatus(500);
   }
 }
 
-// Getting category based on name from the database
+// Getting statistics based on name from the database
 exports.getOne = async (req, res) => {
   try {
     // Await to receive the category
-    const category = await db.Category.findOne({
-      where: { name:  req.params.name},
+    const statistic = await db.Statistic.findOne({
+      where: { Statistics:  req.params.userId},
       include: [
         {
           model: db.Question,
@@ -58,19 +52,15 @@ exports.getOne = async (req, res) => {
   }
 }
 
-// Create a category 
+// Create a statistic 
 exports.create = async (req, res) => {
-  // Retrieve the category
-  const { category_name } = req.body;
   try {
-    const category = await db.Category.create({
-      name: category_name
-    })
+    const statistic = await db.Statistic.create(req.body)
     // Create the category
-    res.status(201).send(category);
+    res.status(201).send(statistic);
   } catch (err) {
     // Log an error message 
-    console.error(`Failed to create the category with error ${err}`);
+    console.error(`Failed to create the statistics with error ${err}`);
     // Send an Internal Server Error response
     res.sendStatus(500);
   }
