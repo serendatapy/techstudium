@@ -1,7 +1,7 @@
 .category-thumbnail {
   margin: 30px;
-  height: 30vh;
-  width: 15vw;
+  height: 300px;
+  width: 500px;
   font-size: 5vh;
   display: flex;
   align-items: center;
@@ -14,6 +14,6 @@
 }
 
 .category-thumbnail:hover {
-  transform: scale(1.1);
+  transform: scale(1.13);
   border: 5px solid var(--customgreen);
 }

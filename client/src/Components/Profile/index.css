@@ -7,10 +7,6 @@
   height: 100vh;
 }
 
-.profile-greeting {
-  margin-bottom: 100px;
-}
-
 .profile-container h1 {
   font-size: 100px;
 }
@@ -20,5 +16,5 @@
 }
 
 .profile-container .category-list {
-  height: 30vh;
+  height: 50vh;
 }

@@ -22,7 +22,7 @@ function Profile(props) {
   return (
     <div className="profile-container">
       <div className="profile-greeting">
-        <h1>Welcome back {name}</h1>
+        <h1>Welcome back, {name}!</h1>
         <p>Which subject would you like to test today?</p>
       </div>
       <div className="category-list">
