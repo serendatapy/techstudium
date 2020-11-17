@@ -17,7 +17,7 @@ function Test(props) {
   }, [])
 
   return (
-    <div className="test-container">
+    question.Answers ? (<div className="test-container">
       <div className="test-category">
         <h1>{category_name}</h1>
       </div>
@@ -25,9 +25,10 @@ function Test(props) {
         <Question question={question} />
       </div>
       <div className="test-answer-list">
-        <AnswerList answers={question.Answers}/>
+        <AnswerList answers={question.Answers} />
       </div>
-    </div>
+    </div>) : (<span>Loading test...</span>)
+
   )
 }
 

@@ -3,7 +3,6 @@ import './index.css';
 
 // Declare the Question component
 function Question({ question }) {
-  console.log("The question is: ", question);
   return (
     <div className="questions">
       {question.title}

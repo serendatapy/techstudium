@@ -1,11 +1,16 @@
 // Import the style for the component
 import './index.css';
 
-// Declare the Answer component
-function Answer() {
+function Answer({ answer }) {
+  function handleClick() {
+
+  }
+
   return (
-    <div>
-    This is the Answer page
+    <div className="answer-container">
+      <button onClick={handleClick}>
+        {answer.text}
+      </button>
     </div>
   )
 }
