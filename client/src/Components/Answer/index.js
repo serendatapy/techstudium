@@ -1,14 +1,17 @@
 // Import the style for the component
 import './index.css';
 
-function Answer({ answer }) {
-  function handleClick() {
+function Answer(props) {
+  const answer = props.answer;
 
-  }
+  const buttonClasses = props.selected ? 'answer selected' : 'answer'
 
   return (
     <div className="answer-container">
-      <button onClick={handleClick}>
+      <button
+        value={answer.isCorrect}
+        className={buttonClasses}
+        onClick={props.handleAnswerClick}>
         {answer.text}
       </button>
     </div>
