@@ -30,8 +30,11 @@
         "operatorAliases": 0
       },
       "tables": {
-        "user": "user",
-        "subjects": "techSubjects"
+        "user": "User",
+        "category": "Category",
+        "question": "Question",
+        "answer": "Answer",
+        "statistic": "Statistic"
       }
     }
   },

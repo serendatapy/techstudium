@@ -1,0 +1,20 @@
+.profile-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  color: white;
+  height: 100vh;
+}
+
+.profile-container h1 {
+  font-size: 100px;
+}
+
+.profile-container p {
+  font-size: 30px;
+}
+
+.profile-container .category-list {
+  height: 50vh;
+}
