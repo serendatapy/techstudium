@@ -1,12 +1,16 @@
 // Import the style for the component
 import './index.css';
+import { Link } from 'react-router-dom';
 
 // Declare the Category component
-function Category({category}) {
+function Category({ category }) {
+  const name = category.name;
   return (
-    <button className="category-thumbnail">
-      {category.name}
-    </button>
+    <Link to={`/test/${name}`}>
+      <button className="category-thumbnail">
+        {name}
+      </button>
+    </Link>
   )
 }
 

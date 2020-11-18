@@ -24,8 +24,7 @@ li {
   max-height: 80px;
   padding: 0 20px;
   min-width: 150px;  
-  transition: background-color 0.3s ease-in-out;
-  
+  transition: background-color 0.3s ease-in-out;  
 }
 
 li a {

@@ -10,7 +10,7 @@ const bcrypt = require('bcrypt');
 exports.getAll = async (req, res) => {
   try {
     // Await to receive all the users from the database
-    const users = await db.user.findAll();
+    const users = await db.User.findAll();
     // Send a standard response for a successful HTTP request
     res.status(200);
     // Send all the users
@@ -26,9 +26,9 @@ exports.getAll = async (req, res) => {
 // Check if the user exists and if it doesn't, create a new user
 exports.create = async (req, res) => {
   // Retrieve the information from the user
-  const { email, password, first_name, last_name } = req.body;
+  const { email, password, firstName, lastName } = req.body;
   // Look for the user in the database
-  const user = await db.user.findOne({ where: { email: email } });
+  const user = await db.User.findOne({ where: { email: email } });
   // If the email address is found, notify the user that it already exists
   if (user) {
     return res
@@ -41,11 +41,11 @@ exports.create = async (req, res) => {
     // Encrypt the password created by the user
     const hash = await bcrypt.hash(password, 10);
     // Create a new user with the provided information and the encrypted password
-    const user = await db.user.create({
+    const user = await db.User.create({
       email: email,
       password: hash,
-      first_name: first_name,
-      last_name: last_name
+      firstName: firstName,
+      lastName: lastName
     })
     // Set the session unique id to the user id and send the newly created user information
     req.session.uid = user.id;
@@ -64,7 +64,7 @@ exports.login = async (req, res) => {
     // Retrieve the email and the password from the user
     const { email, password } = req.body;
     // Look for the user in the database
-    const user = await db.user.findOne({ where: { email: email } });
+    const user = await db.User.findOne({ where: { email: email } });
     // If the user is not found, the method will catch the error
     // If the user is found, validate the inputted password
     const validatePass = await bcrypt.compare(password, user.password);

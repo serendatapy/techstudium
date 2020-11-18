@@ -5,6 +5,7 @@ import Login from './Components/Login/index';
 import Profile from './Components/Profile/index';
 import Logout from './Components/Logout/index';
 import Home from './Components/Home/index';
+import Test from './Components/Test/index';
 
 
 const Dashboard = ({ setIsAuthenticated }) => {
@@ -14,7 +15,17 @@ const Dashboard = ({ setIsAuthenticated }) => {
         <Route
           path="/register"
           render={(props) => (
-            <Register {...props} setIsAuthenticated={setIsAuthenticated} />
+            <Register
+              {...props}
+              setIsAuthenticated={setIsAuthenticated} />
+          )}
+        />
+        <Route
+          path="/test/:category_name"
+          render={(props) => (
+            <Test
+              {...props}
+              setIsAuthenticated={setIsAuthenticated}/>
           )}
         />
         <Route
@@ -22,10 +33,10 @@ const Dashboard = ({ setIsAuthenticated }) => {
           render={(props) => (
             <Login
               {...props}
-              setIsAuthenticated={setIsAuthenticated}/>
+              setIsAuthenticated={setIsAuthenticated} />
           )}
         />
-        <Route path="/profile" 
+        <Route path="/profile"
           render={(props) => (
             <Profile {...props} setIsAuthenticated={setIsAuthenticated} />
           )}

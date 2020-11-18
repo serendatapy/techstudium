@@ -29,7 +29,14 @@ fs
     db[model.name] = model;
   });
 
-  db.sequelize = sequelize;
-  db.Sequelize = Sequelize;
+db.sequelize = sequelize;
+db.Sequelize = Sequelize;
 
-  module.exports = db;
+// ASSOCIATIONS
+Object.keys(db).forEach(modelName => {
+  if (db[modelName].associate) {
+    db[modelName].associate(db);
+  }
+});
+
+module.exports = db;
